@@ -3,6 +3,6 @@
 
 ## Requerimientos 
 
-*Python3 
-*OpenCV 
-*Entorno virtual (no necesario) 
+* Python3 
+* OpenCV 
+* Entorno virtual (no necesario) 
