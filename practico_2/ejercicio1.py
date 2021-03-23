@@ -15,6 +15,9 @@ for i in range(imagen.shape[2]):      #3 Canales
             if (imagen[k,j,i] < UMBRAL): 
                 print( imagen[k,j,i])  
                 imagen[k,j,i] =0;
+            else: 
+                imagen[k,j,i] = 255; 
 
+"""Binarizacion? ----> Si es mayor Negro, si es menor Blanco""" 
 
 cv2.imwrite("resultado.png", imagen) 
