@@ -1,8 +1,15 @@
 # VisionUTN-FRC 
  Clases de Visión por Computadora en UTN-FRC 
 
-## Requerimientos 
+#Alumno 
 
-* Python3 
-* OpenCV 
-* Entorno virtual (no necesario) 
+<img  border-radius: 50% class="circular--square" src="./img/profile_pic.jpeg" />
+
+Matias Dogliani   (72152)
+
+## Requisitos                                                               
+                                                                                
+* Python3                                                                       
+* OpenCV                                                                        
+* Entorno virtual (no necesario)                                                
+
