@@ -3,7 +3,7 @@
 
 # Alumno 
 
-<img src="img/profile_pic.jpeg" alt="Profile Pic" width="200" height="200" > 
+<img src="img/profile_pic.jpeg" alt="Profile Pic" width="120" height="120"  style=" border-radius: 50%;" > 
 
 Matias Dogliani   (72152)
 
