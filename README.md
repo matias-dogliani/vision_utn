@@ -1,9 +1,9 @@
 # VisionUTN-FRC 
  Clases de Visión por Computadora en UTN-FRC 
 
-#Alumno 
+# Alumno 
 
-<img  border-radius: 50% class="circular--square" src="./img/profile_pic.jpeg" />
+<img  class="circular--square" src="./img/profile_pic.jpeg" />
 
 Matias Dogliani   (72152)
 
