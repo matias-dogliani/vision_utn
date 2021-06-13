@@ -32,6 +32,17 @@ def draw (event,x,y,flags,param):
         fx,fy = x,y
         cv2.rectangle(imgSwap,(ix,iy), (x,y), (0,255,0),1) 
 
+def fixedSlice():                                                                     
+    global ix,iy,fx,fy                                                          
+                                                                                
+    if fx < ix:                                                                 
+        fx,ix = ix,fx                                                           
+    if fy < iy:                                                                 
+        fy,iy = iy,fy                                                           
+                                                                                
+    return img[iy:fy, ix:fx]
+      
+
 img =cv2.imread("./img/lena.jpeg")  
 imgSwap =cv2.imread("./img/lena.jpeg")  
 cv2.namedWindow("Ventana Imagen")
@@ -47,12 +58,12 @@ while(1):
     k = cv2.waitKey(1) 
     if k == ord('q'):  
         break 
-    elif k == ord('g'): 
-        cv2.imwrite("./img/imagen_seleccionada.png",img[iy:fy, ix:fx]) 
-    elif k == ord('r'): 
-        imgSwap[:] = img[:] 
-    elif k == ord('e'):
-        SelT = EuclideanTrans(img[ix:fx, iy:fy],10,20,20)
-        cv2.imwrite("./img/sel_transformada.png",SelT) 
-        
+    elif k == ord('g'):                                                         
+        cv2.imwrite("./img/imagen_seleccionada.png",fixedSlice())        
+    elif k == ord('r'):                                                         
+        imgSwap[:] = img[:]                                                     
+    elif k == ord('e'):                                                         
+        SelT = EuclideanTrans(fixedSlice(),10,20,20)                       
+        cv2.imwrite("./img/sel_transformada.png",SelT)     
+
 cv2.destroyAllWindows() 

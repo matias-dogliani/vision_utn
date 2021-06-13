@@ -21,16 +21,15 @@ def draw (event,x,y,flags,param):
         cv2.rectangle(imgSwap,(ix,iy), (x,y), (0,255,0),1) 
 
 
-
-def save(): 
-    global ix,iy,fx,fy
-    
-    if fx < ix: 
-        fx,ix = ix,fx
-    if fy < iy: 
-        fy,iy = iy,fy
-    
-    cv2.imwrite("./img/imagen_seleccionada.png",img[iy:fy, ix:fx]) 
+def fixedSlice():                                                                     
+    global ix,iy,fx,fy                                                          
+                                                                                
+    if fx < ix:                                                                 
+        fx,ix = ix,fx                                                           
+    if fy < iy:                                                                 
+        fy,iy = iy,fy                                                           
+                                                                                
+    return img[iy:fy, ix:fx]
 
 
 
@@ -49,7 +48,7 @@ while(1):
     if k == ord('q'):  
         break 
     elif k == ord('g'): 
-        save()
+        cv2.imwrite("./img/imagen_seleccionada.png",fixedSlice())        
     elif k == ord('r'): 
         imgSwap[:] = img[:] 
         
