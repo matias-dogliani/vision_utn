@@ -20,6 +20,20 @@ def draw (event,x,y,flags,param):
         fx,fy = x,y
         cv2.rectangle(imgSwap,(ix,iy), (x,y), (0,255,0),1) 
 
+
+
+def save(): 
+    global ix,iy,fx,fy
+    
+    if fx < ix: 
+        fx,ix = ix,fx
+    if fy < iy: 
+        fy,iy = iy,fy
+    
+    cv2.imwrite("./img/imagen_seleccionada.png",img[iy:fy, ix:fx]) 
+
+
+
 img =cv2.imread("./img/lena.jpeg")  
 imgSwap =cv2.imread("./img/lena.jpeg")  
 cv2.namedWindow("Ventana Imagen")
@@ -35,7 +49,7 @@ while(1):
     if k == ord('q'):  
         break 
     elif k == ord('g'): 
-        cv2.imwrite("./img/imagen_seleccionada.png",img[iy:fy, ix:fx]) 
+        save()
     elif k == ord('r'): 
         imgSwap[:] = img[:] 
         
