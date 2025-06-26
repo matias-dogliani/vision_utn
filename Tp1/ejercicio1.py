@@ -11,7 +11,7 @@ def adivinar(tries):
         num_adivinado = int(input('Ingrese su numero: '))  
         
         if (num_adivinado == numero):
-            print('Adivino correctamente el numero', numero) 
+            print(f"Adivino correctamente el numero {numero}") 
             break 
 
         if (num_adivinado > numero): 
@@ -21,8 +21,6 @@ def adivinar(tries):
 
 def main(): 
     adivinar(4) 
-
-
 
 
 if __name__ == '__main__': 
